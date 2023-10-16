@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ExchangeRates", urlPatterns = "/exchangeRates")
-public class ExchangeRates extends HttpServlet {
+@WebServlet(name = "ExchangeRatesServlet", urlPatterns = "/exchangeRates")
+public class ExchangeRatesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doGet(req, resp);
