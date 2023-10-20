@@ -3,7 +3,7 @@ package com.bahmet.service;
 import com.bahmet.dao.CurrencyDAO;
 import com.bahmet.dao.ExchangeRateDAO;
 import com.bahmet.exception.DatabaseException;
-import com.bahmet.exception.InvalidCurrencyConvertionPair;
+import com.bahmet.exception.InvalidCurrencyConvertionPairException;
 import com.bahmet.model.Currency;
 import com.bahmet.dto.ExchangeDTO;
 import com.bahmet.model.ExchangeRate;
@@ -87,6 +87,6 @@ public class ExchangeRateService {
             return baseRate.multiply(targetRate);
         }
 
-        throw new InvalidCurrencyConvertionPair();
+        throw new InvalidCurrencyConvertionPairException();
     }
 }
