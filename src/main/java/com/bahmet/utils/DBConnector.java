@@ -20,14 +20,14 @@ public class DBConnector {
             user = properties.getProperty("db.user");
             password = properties.getProperty("db.password");
 
-//            Class.forName("org.postgres.Driver");
+            Class.forName("org.postgresql.Driver");
         } catch (Exception e) {
-            e.printStackTrace();
             throw new RuntimeException("Failed to initialize DBConnector", e);
         }
     }
 
     public static Connection getConnection() throws SQLException {
+
         return DriverManager.getConnection(url, user, password);
     }
 }
