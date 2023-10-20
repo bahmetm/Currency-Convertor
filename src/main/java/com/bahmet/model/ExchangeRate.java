@@ -2,17 +2,30 @@ package com.bahmet.model;
 
 public class ExchangeRate {
     private Long id;
-    private Long baseCurrencyId;
-    private Long targetCurrencyId;
+    private Currency baseCurrency;
+    private Currency targetCurrency;
     private Double rate;
 
     public ExchangeRate() {
     }
 
-    public ExchangeRate(Long id, Long baseCurrencyId, Long targetCurrencyId, Double rate) {
+    public ExchangeRate(ExchangeRate exchangeRate) {
+        this.id = exchangeRate.id;
+        this.baseCurrency = exchangeRate.baseCurrency;
+        this.targetCurrency = exchangeRate.targetCurrency;
+        this.rate = exchangeRate.rate;
+    }
+
+    public ExchangeRate(Long id, Currency baseCurrency, Currency targetCurrency, Double rate) {
         this.id = id;
-        this.baseCurrencyId = baseCurrencyId;
-        this.targetCurrencyId = targetCurrencyId;
+        this.baseCurrency = baseCurrency;
+        this.targetCurrency = targetCurrency;
+        this.rate = rate;
+    }
+
+    public ExchangeRate(Currency baseCurrency, Currency targetCurrency, Double rate) {
+        this.baseCurrency = baseCurrency;
+        this.targetCurrency = targetCurrency;
         this.rate = rate;
     }
 
@@ -24,20 +37,20 @@ public class ExchangeRate {
         this.id = id;
     }
 
-    public Long getBaseCurrencyId() {
-        return baseCurrencyId;
+    public Currency getBaseCurrency() {
+        return baseCurrency;
     }
 
-    public void setBaseCurrencyId(Long baseCurrencyId) {
-        this.baseCurrencyId = baseCurrencyId;
+    public void setBaseCurrency(Currency baseCurrency) {
+        this.baseCurrency = baseCurrency;
     }
 
-    public Long getTargetCurrencyId() {
-        return targetCurrencyId;
+    public Currency getTargetCurrency() {
+        return targetCurrency;
     }
 
-    public void setTargetCurrencyId(Long targetCurrencyId) {
-        this.targetCurrencyId = targetCurrencyId;
+    public void setTargetCurrency(Currency targetCurrency) {
+        this.targetCurrency = targetCurrency;
     }
 
     public Double getRate() {
@@ -47,4 +60,6 @@ public class ExchangeRate {
     public void setRate(Double rate) {
         this.rate = rate;
     }
+
+
 }

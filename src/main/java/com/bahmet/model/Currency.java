@@ -9,14 +9,27 @@ public class Currency {
     public Currency() {
     }
 
-    public Currency(long id, String code, String fullName, String symbol) {
+    public Currency(Currency currency) {
+        this.id = currency.id;
+        this.code = currency.code;
+        this.fullName = currency.fullName;
+        this.symbol = currency.symbol;
+    }
+
+    public Currency(Long id, String code, String fullName, String symbol) {
         this.id = id;
         this.code = code;
         this.fullName = fullName;
         this.symbol = symbol;
     }
 
-    public long getId() {
+    public Currency(String code, String fullName, String symbol) {
+        this.code = code;
+        this.fullName = fullName;
+        this.symbol = symbol;
+    }
+
+    public Long getId() {
         return id;
     }
 
